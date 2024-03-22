@@ -19,6 +19,11 @@ export class AppComponent implements OnInit {
   currentUserLogin?: User;
 
   constructor() {
+
+    //El effect es un detector de cambios de estados que trae Angular,
+    //Si colocas un componente, o elemento, o señal, se encarga de escuchar sus cambios, como el useEffect() de React
+    // En este caso al hacer una logica switch con this.authService.authStatus() empieza a escuchar la señal authStatus() cuando surge un cambio de estado
+    // ejecuta el effect() y realiza la operacion
     const userChangeEffect = effect(() => {
       switch (this.authService.authStatus()) {
         case AuthStatus.authenticated:
