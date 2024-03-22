@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+
+<div>
+    <button type="button" routerLink="/productos/agregar" mat-raised-button color="accent">
+        Agregar producto
+    </button>
+
+</div>
+
+<ul>
+    @for (item of productosList; track $index){
+        <div class="flexbox">
+            <div>
+                <h3>{{item.nombre}}</h3>
+                <p>Categoria: {{item.categoria}} | Stock: {{item.stock}}</p>
+            </div>
+            <div>
+                <h3>Precio: ${{item.precio}}</h3>
+                <button mat-raised-button color="primary">Agregar al carrito</button>
+            </div>
+        </div>
+        <hr>
+    }
+</ul>

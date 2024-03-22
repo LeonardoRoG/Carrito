@@ -1,0 +1,43 @@
+<header>
+    <nav class="nav container">
+        <div>
+            Logo
+        </div>
+        <div>
+            <a class="item-nav" routerLink="/">Inicio</a>
+            <a class="item-nav" routerLink="/productos/index">Productos</a>
+            <a class="item-nav" routerLink="/cliente">Clientes</a>
+        </div>
+        <div>
+            @if (isAuthenticated) {
+                <p>Hola, {{currentUserLogin?.name}}</p>
+                <button class="item-nav" (click)="logout()" routerLink="/">Logout</button>
+            } @else {
+                <button class="item-nav" routerLink="/auth">Login</button>
+            }
+        </div>
+    </nav>
+    
+</header>
+
+
+<main class="container">
+
+    <div>
+        <h1>Main {{title}}</h1>
+        <hr />
+    </div>
+    
+    <div>
+        <p>Inicio router</p>
+        <router-outlet></router-outlet>
+        <p>Fin Router</p>
+    </div>
+
+</main>
+
+<footer class="container">
+    <h3>Footer</h3>
+</footer>
+
+

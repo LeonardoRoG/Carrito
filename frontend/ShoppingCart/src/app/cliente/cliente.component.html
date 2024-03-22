@@ -1,0 +1,10 @@
+<p>cliente works!</p>
+<ul>
+    @for (item of clientes; track $index){
+        <div>
+            <h3>{{item.nombre + ' ' + item.apellido}}</h3>
+            <p>{{'Nivel de cliente: ' + item.nivel}}</p>
+        </div>
+        <hr>
+    }
+</ul>
