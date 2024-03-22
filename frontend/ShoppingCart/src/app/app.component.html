@@ -9,7 +9,7 @@
             <a class="item-nav" routerLink="/cliente">Clientes</a>
         </div>
         <div>
-            @if (isAuthenticated) {
+            @if (this.isAuthenticated) {
                 <p>Hola, {{currentUserLogin?.name}}</p>
                 <button class="item-nav" (click)="logout()" routerLink="/">Logout</button>
             } @else {
@@ -17,7 +17,7 @@
             }
         </div>
     </nav>
-    
+
 </header>
 
 
@@ -27,7 +27,7 @@
         <h1>Main {{title}}</h1>
         <hr />
     </div>
-    
+
     <div>
         <p>Inicio router</p>
         <router-outlet></router-outlet>
